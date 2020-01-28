@@ -33,12 +33,11 @@ When mutation happens the free parameters of a candidate are drawn again randoml
 
     - **params**: Parameters for the numerical models that describe the system which produces the measured values. These are specified as
 
-```
-params.set1: parameters for the first model
-params.set2: parameteters for the second model
-params.setNdataset: parameters for the Nth model.
-
-```
+    ```
+    params.set1: parameters for the first model
+    params.set2: parameteters for the second model
+    params.setNdataset: parameters for the Nth model.
+    ```
 
     - **data**:   Data sets against which the output of the models is compared
 the first data set is compared against the output of the first
@@ -46,11 +45,11 @@ model, the second data set against the output of the second
 model and so on. The data sets are speciefied as
 
 
-```
-data.data1: first data set
-data.data2: second data set
-data.dataNdataset: Nth data set.
-```
+    ```
+    data.data1: first data set
+    data.data2: second data set
+    data.dataNdataset: Nth data set.
+    ```
 
     - **gofFunction**: Name of the goodness-of-fit function. The gof function
 needs to take two arguments as gofFunction(problem,member)
@@ -60,14 +59,13 @@ the output of each model in a candidate solution.
 The fields in a 'member' are
 
 
-```
-member.params: parameters of the candidate in the same order as in the problem.params
-member.simulations: output of the models in sub structers
-member.simulations.simulation1: output of the first model
-member.simulations.simulation2: output of the second model
-member.simulations.simulationN: output of the Nth model.
-```
-
+    ```
+    member.params: parameters of the candidate in the same order as in the problem.params
+    member.simulations: output of the models in sub structers
+    member.simulations.simulation1: output of the first model
+    member.simulations.simulation2: output of the second model
+    member.simulations.simulationN: output of the Nth model.
+    ```
 The gofFunction needs to return a single value which is the goodness-of-fit. **NB! The goal of the algorithm is to minimize this function.**
 
     - **badFitness**: Goodness-of-fit value assigned to a candidate whose model 
@@ -97,12 +95,12 @@ defined as substructures like
 fitparams.paramName1 = name of the first free parameter.
 Each new fitparam needs to have fields
 
-```
-paramName1.min: the minimum value the parameter can have
-paramName1.max: the maximum value the parameter can have
-paramName1.log: Boolean value. If 0 the parameter values are drawn from a uniform distribution if 1 the values are drawn from log-uniform distribution
-paramName1.normalize: Boolean value. If 1 the values in this free parameter are normalized to unity
-```
+    ```
+    paramName1.min: the minimum value the parameter can have
+    paramName1.max: the maximum value the parameter can have
+    paramName1.log: Boolean value. If 0 the parameter values are drawn from a uniform distribution if 1 the values are drawn from log-uniform distribution
+    paramName1.normalize: Boolean value. If 1 the values in this free parameter are normalized to unity
+    ```
 
 ### Output
 * **results**: Structure containing results of the optimization. Fields are
@@ -110,10 +108,10 @@ paramName1.normalize: Boolean value. If 1 the values in this free parameter are 
     - **bestMembers.runN**: The best fit candidate in the Nth run each runNincludes fields.
         - **params**: The params structure from the problem structure and the values for the free parameters that best fit the data.
         - **simulations**: Model outputs in sub structers.
-```
-simulations.simulationN: output of the Nth model.
-```
-       - **fitness**: goodness-of-fit value for this best-fit candidate.
+        ```
+        simulations.simulationN: output of the Nth model.
+        ```
+        - **fitness**: goodness-of-fit value for this best-fit candidate.
 
     - **bestSolutions.runN.generationN**: The best-fit candidate in the Nth run after the Nth generation had been created.
 
