@@ -25,11 +25,11 @@ When mutation happens the free parameters of a candidate are drawn again randoml
 (see fitparams structure description below for the free parameter definition)
     - **models**: Name of the file (string) that needs to be called to run each model. The models are specified as sub structres as
 
-```
-models.model1: name of first model
-models.model2: name of the second model
-models.modelNdataset: name of the Nth model.
-```
+    ```
+    models.model1: name of first model
+    models.model2: name of the second model
+    models.modelNdataset: name of the Nth model.
+    ```
 
     - **params**: Parameters for the numerical models that describe the system which produces the measured values. These are specified as
 
