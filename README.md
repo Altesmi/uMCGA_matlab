@@ -24,32 +24,42 @@ results = umcga(problem)
 When mutation happens the free parameters of a candidate are drawn again randomly for their set intervals 
 (see fitparams structure description below for the free parameter definition)
     - **models**: Name of the file (string) that needs to be called to run each model. The models are specified as sub structres as
+
 ```
 models.model1: name of first model
 models.model2: name of the second model
 models.modelNdataset: name of the Nth model.
-````
+```
+
     - **params**: Parameters for the numerical models that describe the system which produces the measured values. These are specified as
+
 ```
 params.set1: parameters for the first model
 params.set2: parameteters for the second model
 params.setNdataset: parameters for the Nth model.
+
 ```
+
     - **data**:   Data sets against which the output of the models is compared
 the first data set is compared against the output of the first
 model, the second data set against the output of the second
 model and so on. The data sets are speciefied as
+
+
 ```
 data.data1: first data set
 data.data2: second data set
 data.dataNdataset: Nth data set.
 ```
+
     - **gofFunction**: Name of the goodness-of-fit function. The gof function
 needs to take two arguments as gofFunction(problem,member)
 where problem is the problem structure defined as the
 input to the umcga and member is a structure containing 
 the output of each model in a candidate solution. 
 The fields in a 'member' are
+
+
 ```
 member.params: parameters of the candidate in the same order as in the problem.params
 member.simulations: output of the models in sub structers
@@ -57,6 +67,7 @@ member.simulations.simulation1: output of the first model
 member.simulations.simulation2: output of the second model
 member.simulations.simulationN: output of the Nth model.
 ```
+
 The gofFunction needs to return a single value which is the goodness-of-fit. **NB! The goal of the algorithm is to minimize this function.**
 
     - **badFitness**: Goodness-of-fit value assigned to a candidate whose model 
