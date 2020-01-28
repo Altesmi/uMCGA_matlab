@@ -66,7 +66,7 @@ The fields in a 'member' are
     member.simulations.simulation2: output of the second model
     member.simulations.simulationN: output of the Nth model.
     ```
-The gofFunction needs to return a single value which is the goodness-of-fit. **NB! The goal of the algorithm is to minimize this function.**
+    The gofFunction needs to return a single value which is the goodness-of-fit. **NB! The goal of the algorithm is to minimize this function.**
 
     - **badFitness**: Goodness-of-fit value assigned to a candidate whose model 
 output can not be calculated. This should be a high number
