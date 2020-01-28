@@ -31,7 +31,7 @@ models.model2: name of the second model
 models.modelNdataset: name of the Nth model.
 ```
 
-    - **params**: Parameters for the numerical models that describe the system which produces the measured values. These are specified as
+  - **params**: Parameters for the numerical models that describe the system which produces the measured values. These are specified as
 
 ```
 params.set1: parameters for the first model
@@ -96,6 +96,7 @@ output(s) would match the data sets. Free parameters are
 defined as substructures like
 fitparams.paramName1 = name of the first free parameter.
 Each new fitparam needs to have fields
+
 ```
 paramName1.min: the minimum value the parameter can have
 paramName1.max: the maximum value the parameter can have
