@@ -31,7 +31,7 @@ models.model2: name of the second model
 models.modelNdataset: name of the Nth model.
 ```
 
-  - **params**: Parameters for the numerical models that describe the system which produces the measured values. These are specified as
+    - **params**: Parameters for the numerical models that describe the system which produces the measured values. These are specified as
 
 ```
 params.set1: parameters for the first model
