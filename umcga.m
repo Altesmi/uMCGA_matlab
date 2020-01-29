@@ -196,7 +196,7 @@ for runNumber = 1:problem.Nrun
         parentProbability = 1./fitnessPrev;
         parentProbability = parentProbability./sum(parentProbability);
         parentProbability = cumsum(parentProbability); %cumulative sum
-        parentProbability = [0; parentProbability]; %append 0 to make the calculations work
+        parentProbability = [0; parentProbability]; %add 0 to make the calculations work
         
         %Start to create the next generation.
         
@@ -252,9 +252,6 @@ for runNumber = 1:problem.Nrun
 end
 %set problem struct to results
 results.problem = problem;
-% if(isfield(problem,'parallel') && problem.parallel == 0)
-%     set(groot,'ShowHiddenHandles','on');
-%     delete(get(groot,'Children'));
-% end
+
 disp('Optimization completed');
 end

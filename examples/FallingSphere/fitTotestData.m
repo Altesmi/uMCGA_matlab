@@ -2,8 +2,8 @@
 %The goal is to find an optimal drag coefficient Cd. All other parameters
 %are correct
 
-addpath('~/uMCGA/'); %add umcga.m to path
-%load('testData.mat');
+addpath('~/uMCGA_matlab/'); %add folder where umcga.m is to path
+load('testData.mat');
 %set uMCGA parameters
 
 problem = struct;
@@ -39,3 +39,12 @@ problem.fitparams.Cd.normalize = 0;
 
 
 res = umcga(problem);
+%% use analysis tools to plot the results
+
+addpath('../../analysis');
+
+plotuMCGAEstimatesAndFit(res,{'Cd'});
+
+%fetch all Cd estimates from res
+
+Cd = getuMCGAEstimate(res,'Cd');

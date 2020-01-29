@@ -2,7 +2,7 @@
 %The goal is to find an optimal drag coefficient Cd and starting height. All other parameters
 %are correct
 
-addpath('~/uMCGA/'); %add umcga.m to path
+addpath('~/uMCGA_matlab/'); %add folder where umcga.m is to path
 load('testData.mat');
 %set uMCGA parameters
 
@@ -62,3 +62,13 @@ problem.fitparams.startingHeight.normalize = 0;
 
 
 res = umcga(problem);
+
+%% use analysis tools to plot the results
+
+addpath('../../analysis');
+
+plotuMCGAEstimatesAndFit(res,{'Cd','startingHeight'});
+
+%fetch all Cd estimates from res
+
+Cd = getuMCGAEstimate(res,'Cd');
